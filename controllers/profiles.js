@@ -41,4 +41,10 @@ const addCookie = async ( req, res ) => {
   res.json(profile)
 }
 
-export { index, addPhoto, getState, addCookie }
+const updateProfile = async (req, res) => {
+  const profile = await Profile.findById(req.params.id)
+  console.log(req.body);
+}
+
+
+export { index, addPhoto, getState, addCookie, updateProfile }
