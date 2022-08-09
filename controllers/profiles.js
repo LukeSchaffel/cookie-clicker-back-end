@@ -31,8 +31,14 @@ function addPhoto(req, res) {
 
 const getState = async (req, res) => {
   const profile = await Profile.findById(req.params.id)
-  console.log(profile)
   res.json(profile)
 }
 
-export { index, addPhoto, getState }
+const addCookie = async ( req, res ) => {
+  const profile = await Profile.findById(req.params.id)
+  profile.cookies ++
+  profile.save()
+  res.json(profile)
+}
+
+export { index, addPhoto, getState, addCookie }
