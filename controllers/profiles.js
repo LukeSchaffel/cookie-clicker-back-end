@@ -29,4 +29,10 @@ function addPhoto(req, res) {
   })
 }
 
-export { index, addPhoto }
+const getState = async (req, res) => {
+  const profile = await Profile.findById(req.params.id)
+  console.log(profile)
+  res.json(profile)
+}
+
+export { index, addPhoto, getState }
