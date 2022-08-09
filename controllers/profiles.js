@@ -42,8 +42,17 @@ const addCookie = async ( req, res ) => {
 }
 
 const updateProfile = async (req, res) => {
-  const profile = await Profile.findById(req.params.id)
-  console.log(req.body);
+  try {
+    let profile = await Profile.findById(req.params.id)
+    profile.cookies = req.body.cookies
+    profile.save()
+    res.json(profile)
+
+  } catch (error){
+    console.log(error);
+    throw error
+  }
+ 
 }
 
 
