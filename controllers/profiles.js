@@ -44,7 +44,8 @@ const addCookie = async ( req, res ) => {
 const updateProfile = async (req, res) => {
   try {
     let profile = await Profile.findById(req.params.id)
-    profile.cookies = req.body.cookies
+    const { cookies, grandmas, cursors } = req.body
+    profile.cookies = cookies
     profile.save()
     res.json(profile)
 
