@@ -6,7 +6,8 @@ const profileSchema = new mongoose.Schema({
   photo: { type: String },
   cookies: { type: Number, default: 0},
   cursors: { type: Number, default: 0},
-  grandmas: { type: Number, default: 0}
+  grandmas: { type: Number, default: 0},
+  farms: { type: Number, default: 0}
 },{
   timestamps: true,
 })

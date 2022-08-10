@@ -30,8 +30,13 @@ function addPhoto(req, res) {
 }
 
 const getState = async (req, res) => {
+  try {
   const profile = await Profile.findById(req.params.id)
   res.json(profile)
+  } catch(error){
+    console.log(error)
+    throw error
+  }
 }
 
 const addCookie = async ( req, res ) => {
@@ -46,6 +51,7 @@ const updateProfile = async (req, res) => {
     let profile = await Profile.findById(req.params.id)
     const { cookies, grandmas, cursors } = req.body
     profile.cookies = cookies
+    profile.cursors = cursors
     profile.save()
     res.json(profile)
 
