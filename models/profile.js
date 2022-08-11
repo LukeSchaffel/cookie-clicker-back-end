@@ -12,6 +12,7 @@ const profileSchema = new mongoose.Schema({
   factories: { type: Number, default: 0},
   banks: { type: Number, default: 0},
   temples: { type: Number, default: 0},
+  upgrades: []
 },{
   timestamps: true,
 })
