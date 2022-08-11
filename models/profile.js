@@ -7,7 +7,11 @@ const profileSchema = new mongoose.Schema({
   cookies: { type: Number, default: 0},
   cursors: { type: Number, default: 0},
   grandmas: { type: Number, default: 0},
-  farms: { type: Number, default: 0}
+  farms: { type: Number, default: 0},
+  mines: { type: Number, default: 0},
+  factories: { type: Number, default: 0},
+  banks: { type: Number, default: 0},
+  temples: { type: Number, default: 0},
 },{
   timestamps: true,
 })
